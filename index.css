@@ -2,37 +2,31 @@ body{
   font-family: 'Acme', sans-serif;
   background-image: url('background.jpg');
 }
+
 #Title{
   text-align: center;
   font-size: 60px;
   margin-bottom: 30px;
-  margin-top: 70px;
+  font-family: 'Acme', sans-serif;
 }
-#Select{
-  height:35px;
-  padding-right: 10px;
+
+#Poster{
+  margin-top: 50px
 }
-#SearchText{
-  height:35px;
+
+#PosterTitle{
+  text-align:left;
+  font-family: 'Acme', sans-serif;
 }
-#SearchButtom{
-  height:35px;
+
+#PongIntroduction{
+  text-align: left;
 }
-#SearchForm{
-  margin-bottom: 40px;
+
+#Introduction{
+  font-size: 20px;
 }
-#ResultsArea{
-  margin-bottom: 40px;
-}
-h2{
-  font-size: 30px;
-}
-#RegisterUserName{
-  width: 200px;
-}
-#RegisterPassword{
-  width: 200px;
-}
-#UserId{
-  width:200px;
+#pongcapture{
+  margin-top: 30px;
+  margin-left: 20px;
 }

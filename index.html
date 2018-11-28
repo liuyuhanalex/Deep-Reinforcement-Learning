@@ -2,42 +2,85 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Movie Database</title>
+    <title>Let's play Pong!</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   </head>
+
   <body class="Top">
 
     <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand">
+        <img alt="Brand" src="source/logo.png" height="25" width="25">
+      </a>
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand navbar-inverse" href="#Top">Welcome</a>
+          <a class="navbar-brand navbar-inverse"><b>Welcome</b></a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="#StatisticsPart">Statistics</a></li>
-          <li><a href="#UserInformationPart">User Information</a></li>
+          <li><a href="#Begin"><b>Project Information</b></a></li>
+          <li><a href="#Resources"><b>Resources</b></a></li>
+          <li><a href="#Code"><b>Code</b></a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="container">
-      <h1 id="Title">Movie Database Application</h1>
-      <form id="SearchForm" action="index.html" method="post">
-        <select id="Select" class="col-lg-3" name="">
-          <option value="">Movie</option>
-          <option value="">People</option>
-          <option value="">User</option>
+    <!-- Automatic Slideshow Images -->
+    <div class="mySlides w3-display-container w3-center" id ="Poster">
+      <img src="source/ponggame1.png"style="width:100%" height="500">
+      <div class="w3-display-bottomleft w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h2 id="PosterTitle" style="color:Tomato;">Pong Game</h2>
+        <p id = "PongIntroduction">Pong is one of the earliest arcade video games. It is a table tennis sports game featuring simple two-dimensional graphics. The game was originally manufactured by Atari, which released it in 1972. Allan Alcorn created Pong as a training exercise assigned to him by Atari co-founder Nolan Bushnell. Bushnell based the idea on an electronic ping-pong game included in the Magnavox Odyssey, which later resulted in a lawsuit against Atari. Surprised by the quality of Alcorn's work, Bushnell and Atari co-founder Ted Dabney decided to manufacture the game.</p>
+      </div>
+    </div>
 
-        </select>
-        <input type="text" id="SearchText" class="col-lg-7" placeholder="Find Movies,TV Shows,Celebrities,and more..." required>
-        <button type="submit" id="SearchButtom" class="btn btn-primary col-lg-2">Search</button>
-      </form><br>
-      <h2 id="ResultsLabel">Results:</h2>
-      <textarea id="ResultsArea" class="col-lg-12"name="name" rows="10" cols="80"></textarea>
-      <h2>More features you can use:</h2>
-      <!-- Statistics part -->
+    <div class="mySlides w3-display-container w3-center" id ="Poster">
+      <img src="source/ponggame2.jpg"style="width:100%" height="500">
+      <div class="w3-display-bottomleft w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h2 id="PosterTitle" style="color:Tomato;">Pong Game</h2>
+        <p id = "PongIntroduction">Pong is one of the earliest arcade video games. It is a table tennis sports game featuring simple two-dimensional graphics. The game was originally manufactured by Atari, which released it in 1972. Allan Alcorn created Pong as a training exercise assigned to him by Atari co-founder Nolan Bushnell. Bushnell based the idea on an electronic ping-pong game included in the Magnavox Odyssey, which later resulted in a lawsuit against Atari. Surprised by the quality of Alcorn's work, Bushnell and Atari co-founder Ted Dabney decided to manufacture the game.</p>
+      </div>
+    </div>
+
+    <div class="mySlides w3-display-container w3-center" id ="Poster">
+      <img src="source/reinforcement.jpg"style="width:100%" height="500">
+      <div class="w3-display-bottomleft w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h2 id="PosterTitle" style="color:Tomato;">Reinforcement learning</h2>
+        <p id = "PongIntroduction">Reinforcement learning (RL) is an area of machine learning concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward. The problem, due to its generality, is studied in many other disciplines, such as game theory, control theory, operations research, information theory, simulation-based optimization, multi-agent systems, swarm intelligence, statistics and genetic algorithms.
+        In the operations research and control literature, reinforcement learning is called approximate dynamic programming, or neuro-dynamic programming.</p>
+      </div>
+    </div>
+
+
+    <div class="container" id="Begin">
+      <h1 id="Title">Let's Play Pong!</h1>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1><b>Introduction</b></h1>
+            <p id="Introduction">
+              We noticed that computers can now automatically learn to play ATARI games,  they are beating world champions at Go, simulated quadrupeds are learning to run and leap, and robots are learning how to perform complex manipulation tasks that defy explicit programming.
+              In our project, we aim at applying deep reinforcement learning to train a model that could master the game Pong from Pixels based on previous studies and change the parameters to get the best training model in the shortest time.</p>
+          </div>
+          <div class="col-sm-6">
+            <img src="source/pongcapture.png" alt="" height="280" width="450" id="pongcapture">
+          </div>
+        </div>
+        <p id="Introduction">
+          Reinforcement learning solves the difficult problem of correlating immediate actions with the delayed returns they produce. Like humans, reinforcement learning algorithms sometimes have to wait a while to see the fruit of their decisions. They operate in a delayed return environment, where it can be difficult to understand which action leads to which outcome over many time steps.
+          Reinforcement learning algorithms can be expected to perform better and better in more ambiguous, real-life environments while choosing from an arbitrary number of possible actions, rather than from the limited options of a video game. That is, with time we expect them to be valuable to achieve goals in the real world.
+        </p>
+      </div>
+
       </div>
       <div class="container" id="StatisticsPart">
         <div class="jumbotron">
@@ -47,25 +90,6 @@
         </div>
 
         <!-- Database Overview -->
-        <h3>(1)Database Overview:</h3>
-        <div class="col-lg-12">
-          <table id="OverviewTable" class="table table-bordered">
-            <tr class="success">
-              <td>Total number of titles</td>
-              <td id="TitleNumber"></td>
-            </tr>
-            <tr class="warning">
-              <td>Total number of people</td>
-              <td id="PeopleNumber"></td>
-            </tr>
-            <tr class="danger">
-              <td>Total number of users</td>
-              <td id="UserNumber"></td>
-            </tr>
-          </table>
-        </div>
-        <h3>(2)Average title rating by genre:</h3>
-
       </div>
 
       <!-- User Information part -->
@@ -104,6 +128,63 @@
         <h3>Your rating history:</h3>
         <textarea class="col-lg-12"name="name" rows="8" cols="80"></textarea>
       </div>
+
+      <!-- The Contact Section -->
+      <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <p class="w3-opacity w3-center"><i>Find some bugs? Please let us know!</i></p>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i>Worcester Polytechnic Institute<br>
+            <i class="" style="width:30px"></i>100 Institute Road<br>
+            <i class="" style="width:30px"> </i>Worcester, MA | 01609-2280<br>
+          </div>
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-envelope" style="width:30px"> </i>Hang Qi: hma2@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"></i>Jin Huang: jhuang2@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"> </i>Yuhan Liu: yliu26@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"> </i>Yuxiang Bao: yliu26@wpi.edu<br>
+          </div>
+        </div>
+      </div>
+      <!-- Add Google Maps -->
+      <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+      <script>
+      function myMap()
+      {
+        myCenter=new google.maps.LatLng(42.2745754,-71.8084611);
+        var mapOptions= {
+          center:myCenter,
+          zoom:12, scrollwheel: false, draggable: false,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: myCenter,
+        });
+        marker.setMap(map);
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJkspyyVQuQGHm52GWHQ6aUESaZD0ZGRg&libraries=places&callback=myMap"></script>
+
+      <script>
+          // Automatic Slideshow - change image every 4 seconds
+          var myIndex = 0;
+          carousel();
+
+          function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}
+              x[myIndex-1].style.display = "block";
+              setTimeout(carousel, 4000);
+          }
+        </script>
+
   </body>
-  <script src="Homepage.css"></script>
-</html>
+  <script src="index.css"></script>
