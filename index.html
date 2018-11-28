@@ -13,6 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
   </head>
 
   <body class="Top">
@@ -63,23 +64,48 @@
     <div class="container" id="Begin">
       <h1 id="Title">Let's Play Pong!</h1>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <h1><b>Introduction</b></h1>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Introduction</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6">
+                <h1><b>Introduction</b></h1>
+                <p id="Introduction">
+                  We noticed that computers can now automatically learn to play ATARI games,  they are beating world champions at Go, simulated quadrupeds are learning to run and leap, and robots are learning how to perform complex manipulation tasks that defy explicit programming.
+                  In our project, we aim at applying deep reinforcement learning to train a model that could master the game Pong from Pixels based on previous studies and change the parameters to get the best training model in the shortest time.</p>
+              </div>
+              <div class="col-sm-6">
+                <img src="source/pongcapture.PNG" alt="" height="280" width="450" id="pongcapture">
+              </div>
+            </div>
             <p id="Introduction">
-              We noticed that computers can now automatically learn to play ATARI games,  they are beating world champions at Go, simulated quadrupeds are learning to run and leap, and robots are learning how to perform complex manipulation tasks that defy explicit programming.
-              In our project, we aim at applying deep reinforcement learning to train a model that could master the game Pong from Pixels based on previous studies and change the parameters to get the best training model in the shortest time.</p>
-          </div>
-          <div class="col-sm-6">
-            <img src="source/pongcapture.png" alt="" height="280" width="450" id="pongcapture">
+              Reinforcement learning solves the difficult problem of correlating immediate actions with the delayed returns they produce. Like humans, reinforcement learning algorithms sometimes have to wait a while to see the fruit of their decisions. They operate in a delayed return environment, where it can be difficult to understand which action leads to which outcome over many time steps.
+              Reinforcement learning algorithms can be expected to perform better and better in more ambiguous, real-life environments while choosing from an arbitrary number of possible actions, rather than from the limited options of a video game. That is, with time we expect them to be valuable to achieve goals in the real world.
+            </p>
           </div>
         </div>
-        <p id="Introduction">
-          Reinforcement learning solves the difficult problem of correlating immediate actions with the delayed returns they produce. Like humans, reinforcement learning algorithms sometimes have to wait a while to see the fruit of their decisions. They operate in a delayed return environment, where it can be difficult to understand which action leads to which outcome over many time steps.
-          Reinforcement learning algorithms can be expected to perform better and better in more ambiguous, real-life environments while choosing from an arbitrary number of possible actions, rather than from the limited options of a video game. That is, with time we expect them to be valuable to achieve goals in the real world.
-        </p>
       </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Implement Method</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <h1><b>Implement Method</b></h1>
+          <p id="Introduction">
+            In reinforcement learning framework, the agent has an observation about environment. Then, according to inner mechanics, the agent will take one action for this observation. The action of the agent will change the environment, and the new environment will feedback a reward and a new observation to the agent. You can see Figure 1 for it.
+          </p>
+          <img src="source/figure1.png" alt="" id="Figure">
+          <p id="Introduction">
+            In this project, we will use policy gradient method which can directly give an action according to the observation(Murphy). A pretty popular solution is Actor-Critic framework. In this framework, there will be one policy function we can denote it as p(a|s), and one critic function we can denote it as Q(a, s) which can evaluate the value of certain action in specific state. We use deep neural network to approximate p(a|s) and the output of this function is a probability to adopt this action. As for Q(a, s), we will just consider the reward. We denote
+          </p>
+          <img src="source/figure2.png" alt="" id="Figure">
+        </div>
+      </div></div>
 
       </div>
       <div class="container" id="StatisticsPart">
