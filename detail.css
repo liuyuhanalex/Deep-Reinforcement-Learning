@@ -1,3 +1,14 @@
 #try{
   margin-top: 70px;
 }
+
+#Title{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-family: 'Acme', sans-serif;
+}
+#Introduction{
+  font-size: 20px;
+}
