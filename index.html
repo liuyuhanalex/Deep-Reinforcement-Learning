@@ -91,11 +91,11 @@
 
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title">Implement Method</h3>
+          <h3 class="panel-title">Algorithm</h3>
         </div>
         <div class="panel-body">
           <div class="col-sm-12">
-            <h1><b>Implement Method</b></h1>
+            <h1><b>Algorithm</b></h1>
           <p id="Introduction">
             In reinforcement learning framework, the agent has an observation about environment. Then, according to inner mechanics, the agent will take one action for this observation. The action of the agent will change the environment, and the new environment will feedback a reward and a new observation to the agent. You can see Figure 1 for it.
           </p>
@@ -104,8 +104,32 @@
             In this project, we will use policy gradient method which can directly give an action according to the observation(Murphy). A pretty popular solution is Actor-Critic framework. In this framework, there will be one policy function we can denote it as p(a|s), and one critic function we can denote it as Q(a, s) which can evaluate the value of certain action in specific state. We use deep neural network to approximate p(a|s) and the output of this function is a probability to adopt this action. As for Q(a, s), we will just consider the reward. We denote
           </p>
           <img src="source/figure2.png" alt="" id="Figure">
+          <p id="Introduction">in which a means one action. Si  is an observation. γ is a discount factor and rm is the reward which earned in position m of the series whose length is i + k. The cost function we will use is</p>
+          <img src="source/figure3.png" alt="" id="Figure">
         </div>
       </div></div>
+
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">Implementation method</h3>
+        </div>
+        <div class="panel-body">
+          <h1><b>Implementation method</b></h1>
+          <p id="Introduction">Andrej train the agent to beat the computer by building a Neural Network that takes in each image and outputs a command to AI to move up or down.</p>
+          <img src="source/figure4.png" alt="" id="Figure">
+          <p id="Introduction">Our Neural Network, based heavily on Andrej’s solution, will do the following:</p>
+          <ol id="Introduction">
+            <li>Take in images from the game and preprocess them (remove color, background, downsample etc.).</li>
+            <li>Use the Neural Network to compute a probability of moving up.</li>
+            <li>Sample from that probability distribution and tell the agent to move up or down.</li>
+            <li>If the round is over (you missed the ball or the opponent missed the ball), find whether you won or lost.</li>
+            <li>When the episode has finished(someone got to 21 points), pass the result through the backpropagation algorithm to compute the gradient for our weights.</li>
+            <li>After 10 episodes have finished, sum up the gradient and move the weights in the direction of the gradient.</li>
+            <li>Repeat this process until our weights are tuned to the point where we can beat the computer.</li>
+          </ol>
+
+        </div>
+      </div>
 
       <!-- The Contact Section -->
       <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
