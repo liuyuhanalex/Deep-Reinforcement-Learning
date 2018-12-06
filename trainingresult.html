@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Let's play Pong!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+  </head>
+
+  <body class="Top">
+
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand">
+        <img alt="Brand" src="source/logo.png" height="25" width="25">
+      </a>
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand navbar-inverse" href="index.html"><b>Welcome</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="index.html#Begin"><b>Introduction</b></a></li>
+          <li><a href="index.html#Algorithm"><b>Algorithm</b></a></li>
+          <li><a href="index.html#Implementation"><b>Implementation</b></a></li>
+          <li><a href="index.html#Resources"><b>Resources</b></a></li>
+          <li><a href="detail.html"style="color:Tomato;"><b>Detailed guidance</b></a></li>
+          <li><a href="detail.html" style="color:Orange;"><b>Training Result</b></a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1 id="Title">Here is our training result</h1>
+    <div class="container">
+
+      <!-- first step -->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Before training</h3>
+        </div>
+        <div class="panel-body">
+          <p id="Introduction">Let the agent take random action:</p>
+          <video width="450" height="450" controls id="Figure">
+            <source src="source/beforetraining.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video></br>
+          <button class="btn btn-warning"id="button"><a href="TakeRandomAction.py" download="TakeRandomAction.py">Download TakeRandomAction.py</a></button>
+        </div>
+      </div>
+      </div>
+
+      <!-- second step -->
+      <div class="container">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Training for a while</h3>
+          </div>
+          <div class="panel-body">
+            <video width="450" height="450" controls id="Figure">
+              <source src="source/awhile.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></br>
+            <button class="btn btn-warning"id="button"><a href="modelMiddle.p" download="model.p" id="try">Download model.p</a></button></br>
+            <button class="btn btn-warning"id="button"><a href="UsingModel.py" download="UsingModel.py" id="try">Download UsingModel.py</a></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- third step -->
+      <div class="container">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Win the computer!!!</h3>
+          </div>
+          <div class="panel-body" id="Introduction">
+            <video width="450" height="450" controls id="Figure">
+              <source src="source/win.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></br>
+            <button class="btn btn-warning"id="button"><a href="modelWin.p" download="model.p" id="try">Download model.p</a></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Contact Section -->
+      <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <p class="w3-opacity w3-center"><i>Find some bugs? Please let us know!</i></p>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i>Worcester Polytechnic Institute<br>
+            <i class="" style="width:30px"></i>100 Institute Road<br>
+            <i class="" style="width:30px"> </i>Worcester, MA | 01609-2280<br>
+          </div>
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-envelope" style="width:30px"> </i>Hang Qi: hqi3@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"></i>Jin Huang: jhuang2@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"> </i>Yuhan Liu: yliu26@wpi.edu<br>
+            <i class="fa fa-envelope" style="width:30px"> </i>Yuxiang Bao: charlesbao95@outlook.com<br>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Google Maps -->
+      <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+      <script>
+      function myMap()
+      {
+        myCenter=new google.maps.LatLng(42.2745754,-71.8084611);
+        var mapOptions= {
+          center:myCenter,
+          zoom:12, scrollwheel: false, draggable: false,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: myCenter,
+        });
+        marker.setMap(map);
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJkspyyVQuQGHm52GWHQ6aUESaZD0ZGRg&libraries=places&callback=myMap"></script>
+
+   </body>
+   <script type="text/javascript">
+     function Show(){
+         var H = document.getElementById("H").value;
+         var batch_size = document.getElementById("batch_size").value;
+         var learning_rate=document.getElementById("learning_rate").value;
+         var gamma = document.getElementById("gamma").value;
+         var decay_rate = document.getElementById("decay_rate").value;
+         document.getElementById("display").innerHTML ="python rlPong.py "+H+" "+batch_size+" "+
+         learning_rate+" "+gamma+" "+decay_rate;
+     }
+     </script>;
+</html>

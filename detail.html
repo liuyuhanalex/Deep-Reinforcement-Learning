@@ -32,10 +32,11 @@
           <li><a href="index.html#Implementation"><b>Implementation</b></a></li>
           <li><a href="index.html#Resources"><b>Resources</b></a></li>
           <li><a href="detail.html"style="color:Tomato;"><b>Detailed guidance</b></a></li>
+          <li><a href="trainingresult.html" style="color:Orange;"><b>Training Result</b></a></li>
         </ul>
       </div>
     </nav>
-    <h1 id="Title">Follow me step by step</h1>
+    <h1 id="Title">Flow me step by step</h1>
     <div class="container">
 
       <!-- first step -->
@@ -90,7 +91,7 @@
             <p><input class="btn btn-default" type="submit" value="Generate your training model" onclick="Show()"/></p>
             <p>Copy this line of code and run it at the position where script stored:</p>
             <div>
-              <div class="alert alert-info" role="alert" id="display"></div>
+              <div class="alert alert-info" role="alert" id="display" id="Introduction"></div>
             </div>
           </div>
         </div>
@@ -100,10 +101,13 @@
       <div class="container">
         <div class="panel panel-warning">
           <div class="panel-heading">
-            <h3 class="panel-title">Resume from last time training</h3>
+            <h3 class="panel-title">Resume from last training</h3>
           </div>
           <div class="panel-body">
-
+            <p id="Introduction">You can stop training whenever you want and resume last training use:</p>
+            <div class="alert alert-info" id="Introduction">
+              <strong></strong>python rlPong.py resume
+            </div>
           </div>
         </div>
       </div>
@@ -126,6 +130,7 @@
           </div>
         </div>
       </div>
+
       <!-- Add Google Maps -->
       <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
       <script>
