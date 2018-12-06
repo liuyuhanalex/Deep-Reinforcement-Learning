@@ -57,6 +57,7 @@
             </div>
             <p id="Introduction">Thanks for Nikita Kniazev's solution on stackoverflow.</p>
             <li>pickle</li>
+            <li>TensorFlow</li>
           </ol>
         </div>
       </div>
@@ -70,7 +71,8 @@
           </div>
           <div class="panel-body">
             <p id="Introduction">Download our code here:</p>
-            <button class="btn btn-default"name="button"><a href="rlPong.py" download="rlPong.py" id="try">Download rlPong.py</a></button>
+            <button class="btn btn-warning"id="button" style="border:2px solid DodgerBlue;"><a href="rlPong.py" download="rlPong.py" id="try"><b>Download rlPong.py</b></a></button><br>
+            <button class="btn btn-warning"id="button" style="border:2px solid DodgerBlue;"><a href="rlPongTF.py" download="rlPong.py" id="try"><b>Download rlPong.py(Using TensorFlow)</b></a></button>
           </div>
         </div>
       </div>
@@ -88,7 +90,7 @@
             <p>Learning rate:<input type="text" id="learning_rate" value=""></p>
             <p>Discount factor for reward:<input type="text" id="gamma" value=""></p>
             <p>Decay factor for RMSProp leaky sum of grad^2:<input type="text" id="decay_rate" value=""></p>
-            <p><input class="btn btn-default" type="submit" value="Generate your training model" onclick="Show()"/></p>
+            <input class="btn btn-warning" type="submit" id="button"value="Generate your training model" onclick="Show()"/></br>
             <p>Copy this line of code and run it at the position where script stored:</p>
             <div>
               <div class="alert alert-info" role="alert" id="display" id="Introduction"></div>

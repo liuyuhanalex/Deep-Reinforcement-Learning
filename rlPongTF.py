@@ -1,19 +1,41 @@
 import gym
 import numpy as np
-import cPickle as pickle
+import _pickle as pickle
 import tensorflow as tf
 from gym import wrappers
 from gym.wrappers import Monitor
 
 import os
-print "Running this from: ",os.getcwd()
+print ("Running this from: ",os.getcwd())
 
-H = 200
-batch_size = 10
-learning_rate = 1e-4
-gamma = 0.99
-decay_rate = 0.99
-resume = False
+
+import sys
+NumberofArgv = len(sys.argv)
+
+resume = False # resume from previous checkpoint?
+
+if sys.argv[1]=="resume":
+    resume = True
+    arguments = pickle.load(open('arguments.p', 'rb'))
+    H = arguments['H']
+    batch_size = arguments['batch_size']
+    learning_rate = arguments['learning_rate']
+    gamma = arguments['gamma']
+    decay_rate = arguments['decay_rate']
+else:
+    if NumberofArgv != 6:
+        print("Please check the arguments!")
+        sys.exit()
+
+    else:
+        H = int(sys.argv[1]) # number of hidden layer neurons
+        batch_size = int(sys.argv[2]) # every how many episodes to do a param update?
+        learning_rate = float(sys.argv[3])
+        gamma = float(sys.argv[4]) # discount factor for reward
+        decay_rate = float(sys.argv[5]) # decay factor for RMSProp leaky sum of grad^2
+        arguments ={'H':H,'batch_size':batch_size,'learning_rate':learning_rate,'gamma':gamma,'decay_rate':decay_rate}
+        pickle.dump(arguments, open('arguments.p', 'wb'))
+
 render = False
 
 image_size = 80
@@ -36,7 +58,7 @@ def discount_rewards(r):
   """ take 1D float array of rewards and compute discounted reward """
   discounted_r = np.zeros_like(r)
   running_add = 0
-  for t in reversed(xrange(0, r.size)):
+  for t in reversed(range(0, r.size)):
     if r[t] != 0: running_add = 0 # reset the sum, since this was a game boundary (pong specific!)
     running_add = running_add * gamma + r[t]
     discounted_r[t] = running_add
@@ -51,11 +73,11 @@ h_fc1 = tf.nn.relu(tf.matmul(observations,model['W1']))
 h_fc2 = tf.matmul(h_fc1,model['W2'])
 probability = tf.nn.sigmoid(h_fc2)
 
-print observations.get_shape()
-print model['W1'].get_shape()
-print h_fc1.get_shape()
-print model['W2'].get_shape()
-print probability.get_shape()
+print (observations.get_shape())
+print (model['W1'].get_shape())
+print (h_fc1.get_shape())
+print (model['W2'].get_shape())
+print (probability.get_shape())
 
 
 #learning setup
@@ -72,9 +94,6 @@ W2Grad = tf.placeholder(tf.float32,name="batch_gradW2")
 batchGrad = [W1Grad,W2Grad]
 
 updateGrads = adam.apply_gradients(zip(batchGrad,tvars))
-
-
-# In[7]:
 
 env = gym.make("Pong-v0")
 observation = env.reset()
@@ -96,15 +115,9 @@ saver = tf.train.Saver()
 won = 0
 lost = 0
 
-
-# In[8]:
-
 Monitor(env, '/root/tmp/pong-sub-1',force=True)
 #env.reset()
 #print "Reset Done!!"
-
-
-# In[ ]:
 
 while episode_number <= 10000:
 
@@ -143,7 +156,7 @@ while episode_number <= 10000:
         else: lost+=1
 
     if done:
-        print "Episode ",episode_number," Completed and took ",len(xs)," steps"
+        print ("Episode ",episode_number," Completed and took ",len(xs)," steps")
         episode_number += 1
         epx = np.vstack(xs)
         epy = np.vstack(ys)
@@ -162,7 +175,7 @@ while episode_number <= 10000:
             for ix in range(len(gradBuffer)): gradBuffer[ix] = 0.0 * gradBuffer[ix]
 
         running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
-        if episode_number % 10 == 0: print 'resetting env. episode %d reward total was %f. running mean: %f, won: %.1f %%' % (episode_number, reward_sum, running_reward, 100.0*float(won)/float(won+lost))
+        if episode_number % 10 == 0: print ('resetting env. episode %d reward total was %f. running mean: %f, won: %.1f %%' % (episode_number, reward_sum, running_reward, 100.0*float(won)/float(won+lost)))
         if episode_number % 1000 == 0: save_path = saver.save(sess,  os.path.join(os.getcwd(), 'TF_RL_save'+str(episode_number)))
         reward_sum = 0
         observation = env.reset() # reset env
