@@ -1,11 +1,14 @@
 # Deep reinforcement learning
 ## Project Website
    [Let's play Pong!](https://liuyuhanalex.github.io/Deep-reinforcement-learning/)
-## Team Members:
+## Team Members
 - Hang Qi
 - Jin Huang
 - Yuhan Liu
 - Yuxiang Bao
+
+## Training the model
+1. Download rlPong.py or rlPongTF.py(This version using tensorflow)
 
 For training the model:
 1.Download rlPong.py or rlPongTF.py(This version using tensorflow)
