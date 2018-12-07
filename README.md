@@ -23,5 +23,14 @@
      - c: Learning rate
      - d: Discount factor for reward
      - e: Decay factor for RMSProp leaky sum of grad^2
+    - You can also go to our website to generate this line of code
 4. You can stop whenever you want, and if you want to resume last training:
    - python rlPong.py(rlPongTF.py) resume
+
+## Using our models
+1. Download a model [Training for a while](./modelMiddle.p), [Win](./modelWin.p)
+2. Download UsingModel.py script
+3. Change the name of the .p file in UsingModel.py script
+
+## Result Video
+   [Let's see what we get!](https://liuyuhanalex.github.io/Deep-reinforcement-learning/trainingresult.html)
