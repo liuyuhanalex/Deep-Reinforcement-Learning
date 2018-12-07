@@ -1,4 +1,5 @@
 # Deep reinforcement learning
+In our project, we aim at applying deep reinforcement learning to train a model that could master the game Pong from Pixels based on previous studies and change the parameters to get the best training model in the shortest time.
 ## Project Website
    [Let's play Pong!](https://liuyuhanalex.github.io/Deep-reinforcement-learning/)
 ## Team Members
